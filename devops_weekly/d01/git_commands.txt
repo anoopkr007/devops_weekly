@@ -1,0 +1,11 @@
+   57  git init => to start git
+   58  yum install git -y ==> install git as its not installed
+   59  git init => start git
+   68  git status => status 
+   69  git add history_machine2.txt => add the file to git 
+   71  git status
+   72  git commit -m"my first commit" => commit the file
+   74  git status
+   75  git remote add origin https://github.com/anoopkr007/devops_material.git ==> remote repo name 
+   76  git status 
+   78  git push -u origin master => push to master

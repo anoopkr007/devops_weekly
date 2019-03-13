@@ -1,0 +1,46 @@
+    1  ls .ssh/
+    2  pwd
+    3  yum install tree -y
+    4  tree
+    5  clear
+    6  tree
+    7  pwd
+    8  ls
+    9  tree -h
+   10  tree --h
+   11  clear
+   12  which tree
+   13  rpm -qa | grep tree
+   14  ls 
+   15  l s-lart
+   16  ls -lrt
+   17  ssh-keygen -t rsa
+   18  ssh ec2-52-221-206-80.ap-southeast-1.compute.amazonaws.com
+   19  ls
+   20  cd .ssh/
+   21  ls
+   22  cat known_hosts 
+   23  cat id_rsa.pub
+   24  ssh ec2-52-221-206-80.ap-southeast-1.compute.amazonaws.com
+   25  clear
+   26  ls -lart 
+   27  cd /
+   28  cd /root/
+   29  ls -lart 
+   30  vi .bashrc
+   31  clear
+   32  ssh ec2-52-221-206-80.ap-southeast-1.compute.amazonaws.com
+   33  clear
+   34  ssh ec2-52-221-206-80.ap-southeast-1.compute.amazonaws.com
+   35  yum install git -y
+   36  git init
+   37  cd /home/
+   38  ls
+   39  mkdir /opt/devops_material
+   40  chmod -R 777 /opt/devops_material
+   41  cd 
+   42  cd /opt/devops_material
+   43  git init
+   44  ls
+   45  git status
+   46  history > machine_1.txt

@@ -1,0 +1,66 @@
+    1  owd
+    2  pwd
+    3  exit
+    4  ls
+    5  cd .ssh/
+    6  vi authorized_keys 
+    7  exit
+    8  pwd
+    9  cd .ssh/
+   10  ls
+   11  vi authorized_keys 
+   12  cd ..
+   13  ls
+   14  mkdir anoop_root
+   15  cat .ssh/authorized_keys 
+   16  exit
+   17  ls
+   18  vi /root/.bash
+   19  exit
+   20  cat .bash
+   21  echo "Machine 2"
+   22  vi .bash
+   23  pwd
+   24  vi test.sh
+   25  chmod +x test.sh 
+   26  exit
+   27  ls
+   28  ./test.sh 
+   29  ls -lart 
+   30  cat .bashrc
+   31  vi .bashrc
+   32  exit
+   33  clear 
+   34  ls
+   35  rm -rf test.sh
+   36  vi .bash
+   37  exit
+   38  vi .bashrc 
+   39  exit
+   40  vi .bashrc 
+   41  exit
+   42  vi .bashrc
+   43  exit
+   44  vi .bashrc 
+   45  exit
+   46  cd /opts
+   47  cd /opt/
+   48  mkdir devops_material
+   49  cd devops_material/
+   50  pwd
+   51  chmod 777 /opt/devops_material
+   52  chmod -R 777 /opt/devops_material
+   53  cd -
+   54  cd /root/
+   55  rm -rf /opt/devops_material
+   56  mkdir -p /opt/devops_material && chmod -R 777 /opt/devops_material && cd /opt/devops_material
+   57  git init
+   58  yum install git -y
+   59  git init
+   60  ls
+   61  pwd
+   62  cat .git/
+   63  ls .git/
+   64  history
+   65  pwd
+   66  history > history_machine2.txt
