@@ -1,0 +1,89 @@
+------------------------Kubernetes---------------------------------------
+apiVersion: "v1"
+kind: Pod
+metadata:
+  name: redis
+  labels:
+    name: redis
+    app: demo
+spec:
+  containers:
+    - name: redis
+      image: redis:latest
+      ports:
+        - containerPort: 6379         
+          protocol: TCP
+          
+           
+kubectl create -f redis.yml 
+kubectl get pods      
+kubectl get pods -o wide
+kubectl describe pods redis
+kubectl exec -it redis /bin/bash
+kubectl delete pod redis
+
+=================================================================================================================================================================
+
+====================
+kubectl -n kube-system get secret clusterinfo -o yaml | grep token-map | awk '{print $2}' | base64 --decode | sed "s|{||g;s|}||g;s|:|.|g;s/\"//g;" | xargs echo
+====================
+kubectl -n kube-system get secret -o=name | grep 'admin-user'
+====================
+https://stackoverflow.com/questions/47126779/join-cluster-after-init-token-expired
+kubeadm token create --print-join-command
+====================
+
+=================================================================================================================================================================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-first-pod
+spec:
+  containers:
+  - name: my-nginx
+    image: nginx
+  - name: my-centos
+    image: centos
+    command: ["/bin/sh", "-c", "while : ;do curl http://localhost:80/; sleep 3; done"] 
+ 
+ my-first-pod.yml
+
+
+
+kubectl get pods
+kubectl get pods
+kubectl logs my-first-pod -c my-centos --tail=30 
+kubectl logs my-first-pod -c my-nginx --tail=30 
+kubectl exec -it  my-first-pod -c my-nginx /bin/bash
+
+=================================================================================================================================================================
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    app: nginx
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        
+        
+kubectl create -f nginx-rc.yml  --- Creating pod
+kubectl get rc
+kubectl get pods -o wide
+
+=================================================================================================================================================================
+
+

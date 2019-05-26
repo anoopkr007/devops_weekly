@@ -1,0 +1,151 @@
+    1  cd /root/
+    2  vi .bashrc 
+    3  exit
+    4  vi /root/.bashrc 
+    5  exit
+    6  sudo apt-get update -y
+    7  sudo apt-get install -y apt-transport-https
+    8  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add
+    9  vi /etc/apt/sources.list.d/kubernetes.list
+   10  sudo apt-get update -y
+   11  sudo apt-get install -y docker.io
+   12  sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+   13  kubeadm init
+   14  kubeadm init --ignore-preflight-errors=NumCPU
+   15  cd $HOME
+   16  pwd
+   17  cd -
+   18  mkdir -p $HOME/.kube
+   19  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   20  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   21  cat $HOME/.kube/config
+   22  sysctl net.bridge.bridge-nf-call-iptables=1
+   23  export kubever=$(kubectl version | base64 | tr -d '\n')
+   24  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+   25  kubectl get nodes
+   26  cd /opt/
+   27  ks
+   28  la
+   29  ls
+   30  mkdir redis
+   31  cd redis/
+   32  vi redis.yml 
+   33  kubectl create -f redis.yml 
+   34  kubectl get pods
+   35  kubectl get pods -o wide
+   36  kubectl describe pods redis
+   37  kubectl exec -it redis /bin/bash
+   38  docker ps
+   39  docker exec -it 7a6aa305232c bash
+   40  kubectl get pods -o wide
+   41  kubectl get pods 
+   42  kubeadm token list
+   43  cd ..
+   44  mkdir myfirstpod
+   45  cd myfirstpod/
+   46  vi apiVersion: v1
+   47  vi apiVersion
+   48  ls
+   49  rm -rf *
+   50  vi myfirstpod.yml
+   51  kubectl create -f myfirstpod.yml
+   52  kubectl get pods 
+   53  kubectl get pods -o wide
+   54  kubectl logs my-first-pod -c my-centos --tail=30 
+   55  kubectl logs my-first-pod -c my-centos --tail=30  | grep cent
+   56  kubectl logs my-first-pod -c my-centos --tail=30  | grep ng
+   57  kubectl logs my-first-pod -c my-centos --tail=30 
+   58  kubectl logs my-first-pod -c my-nginx --tail=30 
+   59  kubectl logs my-first-pod -c my-nginx --tail=30  --tail=1
+   60  kubectl logs my-first-pod -c my-nginx --tail=30  --tail=30
+   61  kubectl logs my-first-pod -c my-centos --tail=30  --tail=30
+   62  kubectl exec -it  my-first-pod -c my-nginx /bin/bash
+   63  kubectl exec -it  my-first-pod -c my-centos /bin/bash
+   64  cd ..
+   65  mkdir replicas
+   66  cd replicas/
+   67  vi nginx-rc.yml
+   68  kubectl get pods
+   69  kubectl get pods -o wide
+   70  vi nginx-rc.yml
+   71  kubectl create -f nginx-rc.yml 
+   72  kubectl get pods -o wide
+   73  kubectl get rc
+   74  kubectl get pod
+   75  kubectl get pods
+   76  kubectl get pods 
+   77  cd /root/.ssh/
+   78  ls
+   79  cat authorized_keys 
+   80  vi authorized_keys 
+   81  cd -
+   82  ls $HOME/.kube/config
+   83  ls
+   84  cat $HOME/.kube/config
+   85  cd /opt/
+   86  ls
+   87  mkir service_2605
+   88  mkdir service_2605
+   89  cd service_2605/
+   90  ls
+   91  vi helloworld.yml
+   92  vi helloworld-nodeport-service.yml
+   93  cat helloworld.yml 
+   94  cat helloworld-nodeport-service.yml
+   95  kubectl create -f helloworld.yml
+   96  kubectl get pods
+   97  cat helloworld.yml 
+   98  kubectl get pods
+   99* 
+  100  kubectl create -f helloworld-nodeport-service.yml
+  101  kubectl get pods
+  102  kubectl get service
+  103  kubectl get pods --all-namespaces
+  104  ls
+  105  kubeadm --help
+  106  kubeadm version
+  107  cd ..
+  108  ls
+  109  mkdir devops
+  110  cd devops/
+  111  git init
+  112  git pull git@github.com:anoopkr007/devops_weekly.git
+  113  git pull https://github.com/anoopkr007/devops_weekly.git
+  114  ls
+  115  cd devops_weekly/
+  116  ls
+  117  mkdir may25-26
+  118  cd may25-26/
+  119  pwd
+  120  cd /opt/
+  121  ls
+  122  cp -rf redis /opt/devops/devops_weekly/may25-26/.
+  123  cp -rf myfirstpod /opt/devops/devops_weekly/may25-26/.
+  124  cp -rf service_2605 /opt/devops/devops_weekly/may25-26/.
+  125  ls
+  126  cd redis/
+  127  ls
+  128  cd ../myfirstpod/
+  129  ls
+  130  cd ..
+  131  ls
+  132  cp -rf replicas /opt/devops/devops_weekly/may25-26/.
+  133  cd /opt/devops/
+  134  ls
+  135  ls -lart 
+  136  git status
+  137  git add devops_weekly/may25-26/
+  138  git status
+  139  git commit -m "K8s May26"
+  140  git push 
+  141  git push https://github.com/anoopkr007/devops_weekly.git
+  142  git status
+  143  cd devops_weekly/
+  144  s
+  145  ls
+  146  cd may25-26/
+  147  ls
+  148  may25
+  149  mkdir may25
+  150  cd may25/
+  151  history > history_may26.txt
